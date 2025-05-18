@@ -46,8 +46,8 @@ app.use(pinoHttp({ logger }));
 app.use('/api/secondchance/items', secondChanceItemsRoutes);
 
 // Search API Task 2: add the searchRoutes to the server by using the app.use() method.
-//{{insert code here}}
-
+const searchRoutes = require('./routes/searchRoutes');
+app.use('/api/secondchance/search', searchRoutes);
 
 // Global Error Handler
 app.use((err, req, res, next) => {
