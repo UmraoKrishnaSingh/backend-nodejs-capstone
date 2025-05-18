@@ -4,6 +4,9 @@ const connectToDatabase = require('../models/db');
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const logger = require('../logger');
+const dotenv = require('dotenv');
+dotenv.config();
+const JWT_SECRET = process.env.JWT_SECRET;
 
 router.post('/register', async (req, res) => {
     try {
